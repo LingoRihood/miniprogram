@@ -1,0 +1,24 @@
+<!--pages/publish/publish.wxml-->
+<!-- 发表模块 -->
+<view class="pub-wrap">
+  <view class="pub-text" bindtap="submitData">发表</view>
+</view>
+
+<!-- 发表文字内容模块 -->
+<view class="input-wrap">
+    <textarea placeholder="这一刻的想法..." class="input-text" maxlength="-1" bindinput="getValue"></textarea>
+</view>
+
+<!-- 发布图片模块 -->
+<view class="img-wrap">
+  <block wx:for="{{tempImgList}}" wx:key="index">
+    <view class="img-item">
+      <image class="img-choose" src="{{item}}" mode="aspectFill"></image>
+      <image class="close-img" src="../../icon/close.png" mode="widthFix" bindtap="deleteImg" data-index="{{index}}"></image>
+    </view>
+  </block>  
+  <!-- 添加图片模块 -->
+  <view class="img-item" bindtap="chooseImage" wx:if="{{tempImgList.length < 9}}">
+    <image class="img-choose" src="../../icon/add.png" mode="widthFix"></image>
+  </view>
+</view>

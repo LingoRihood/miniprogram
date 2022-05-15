@@ -1,0 +1,100 @@
+<!--pages/mine/mine.wxml-->
+<!-- 头像背景 -->
+<view class="top">
+  <image src="../../images/mine.jpg" mode="scaleToFill"></image>
+</view>
+
+<!-- 头像 -->
+<view class="mylogo">
+  <view class="mylogo_photo">
+    <image class="face" src="{{userInfo.avatarUrl}}"></image>
+  </view>
+  <view class="mylogo_name">{{userInfo.nickName}}</view>
+</view>
+
+<button class="mine-login" type="primary" wx:if="{{userInfo == null}}" bindtap="login">授权登录</button>
+<view wx:if="{{userInfo == null}}" style="width: 100%;height: 10rpx;"></view>
+
+<!-- 功能 -->
+<view class="function">
+  <view class="function-item">
+    <view class="function-img">
+      <image src="../../icon/myaccount.png" mode="widthFix"></image>
+    </view>
+    <view class="funcInfo">我的账户</view>
+    <view class="arrow">
+      <image src="../../icon/arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="function-item">
+    <view class="function-img">
+      <image src="../../icon/track.png" mode="widthFix"></image>
+    </view>
+    <view class="funcInfo">行动轨迹</view>
+    <view class="arrow">
+      <image src="../../icon/arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="function-item">
+    <view class="function-img">
+      <image src="../../icon/temperature.png" mode="widthFix"></image>
+    </view>
+    <view class="funcInfo">体温上传</view>
+    <view class="arrow">
+      <image src="../../icon/arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="function-item">
+    <view class="function-img">
+      <image src="../../icon/healthcode.png" mode="widthFix"></image>
+    </view>
+    <view class="funcInfo">健康码上传</view>
+    <view class="arrow">
+      <image src="../../icon/arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="function-item">
+    <view class="function-img">
+      <image src="../../icon/travelcode.png" mode="widthFix"></image>
+    </view>
+    <view class="funcInfo">行程码上传</view>
+    <view class="arrow">
+      <image src="../../icon/arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="function-item">
+    <view class="function-img">
+      <image src="../../icon/volunteer.png" mode="widthFix"></image>
+    </view>
+    <view class="funcInfo">志愿者申请</view>
+    <view class="arrow">
+      <image src="../../icon/arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="function-item">
+    <view class="function-img">
+      <image src="../../icon/ccp.png" mode="widthFix"></image>
+    </view>
+    <view class="funcInfo">智慧党建</view>
+    <view class="arrow">
+      <image src="../../icon/arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="function-item">
+    <view class="function-img">
+      <image src="../../icon/complaint.png" mode="widthFix"></image>
+    </view>
+    <view class="funcInfo">投诉建议</view>
+    <view class="arrow">
+      <image src="../../icon/arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+
+
+<button type="primary" open-type="contact" wx:if="{{userInfo != null}}" >在线客服</button>
+<view style="height: 10rpx;"></view>
+<button class="mine-logout" type="primary" wx:if="{{userInfo != null}}" bindtap="logout">退出登录</button>
+
+
+

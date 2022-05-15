@@ -1,0 +1,70 @@
+/**index.wxss**/
+.swiper-container {
+  height: 350rpx;
+}
+
+.notice {
+  display: flex;
+  width: 98%;
+  height: 120rpx;
+  margin: 10rpx auto;
+  background-color: #FFF6EA;
+  border: 2px solid #FF8D29;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+
+.noticeIcon {
+  flex: 1;
+  width: 80rpx;
+  height: 100rpx;
+  margin: 10rpx 0 10rpx 8rpx;
+}
+
+.noticeIcon image {
+  width: 100%;
+  height: 100%;
+}
+
+.noticeContent {
+  flex: 8;
+  height: 100rpx;
+  font-size: 30rpx;
+  padding-left: 16rpx;
+  padding-right: 6rpx;
+  padding-top: 10rpx;
+  padding-bottom: 5rpx;
+  letter-spacing: 1px;
+  /* 当对象内文本一处时显示省略标记(...)
+  text-overflow: ellipsis; 
+  由于是紧急重要通知，故不应该有省略，如果通知字数很多，可以在社区论坛发布完整版
+  */
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  height: 150rpx;
+  margin: 50rpx auto 80rpx;
+}
+
+.nav-banner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.nav-banner .nav-banner-img {
+  flex: 3;
+  padding-left: 40rpx;
+}
+
+.nav-banner .nav-banner-img image {
+  width: 70%;
+}
+
+.nav-banner .description {
+  flex: 1;
+  text-align: center;
+  font-size: 29rpx;
+}

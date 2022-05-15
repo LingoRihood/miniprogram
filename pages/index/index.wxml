@@ -1,0 +1,76 @@
+<!--index.wxml-->
+<!-- 轮播图 -->
+<swiper class="swiper-container" indicator-dots="true" indicator-color="white" indicator-active-color="#5534A5" autoplay="true" interval="3000" circular="true">
+  <swiper-item wx:for="{{swiperList}}" wx:key="_id">
+    <image src="{{item.indexSwiperphoto}}" style="width: 100%;" mode="widthFix"></image>
+  </swiper-item>
+</swiper>
+
+<!-- 当日通知 -->
+<view class="notice">
+  <view class="noticeIcon">
+    <image src="../../icon/indexNotice.png"></image>
+  </view>
+  <swiper class="noticeContent" vertical="true" autoplay="true" interval="5000" circular="true">
+    <swiper-item wx:for="{{noticeArr}}" wx:key="_id">
+      <view class="noticeText">{{item.noticeItem}}</view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 后期有时间再将icon全部图片上传至云端 -->
+<!-- 个人服务板块导航栏 -->
+<view class="nav">
+  <view class="nav-banner" bindtap="communityPay">
+    <view class="nav-banner-img">
+      <image src="../../icon/communityPay.png" mode="widthFix"></image>
+    </view>
+    <view class="description">物业缴费</view>
+  </view>
+  <view class="nav-banner" bindtap="parkingCosts">
+    <view class="nav-banner-img">
+      <image src="../../icon/parkingCosts.png" mode="widthFix"></image>
+    </view>
+    <view class="description">停车场服务</view>
+  </view>
+  <view class="nav-banner" bindtap="guard">
+    <view class="nav-banner-img">
+      <image src="../../icon/guard.png" mode="widthFix"></image>
+    </view>
+    <view class="description">智慧门禁</view>
+  </view>
+  <view class="nav-banner" bindtap="tools">
+    <view class="nav-banner-img">
+      <image src="../../icon/tools.png" mode="widthFix"></image>
+    </view>
+    <view class="description">防疫全家桶</view>
+  </view>
+</view>
+
+<!-- 社区服务板块导航栏 -->
+<view class="nav">
+  <view class="nav-banner" bindtap="repair">
+    <view class="nav-banner-img">
+      <image src="../../icon/repair.png" mode="widthFix"></image>
+    </view>
+    <view class="description">报事报修</view>
+  </view>
+  <view class="nav-banner" bindtap="contact">
+    <view class="nav-banner-img">
+      <image src="../../icon/contact.png" mode="widthFix"></image>
+    </view>
+    <view class="description">联系物业</view>
+  </view>
+  <view class="nav-banner" bindtap="questionnaire">
+    <view class="nav-banner-img">
+      <image src="../../icon/questionnaire.png" mode="widthFix"></image>
+    </view>
+    <view class="description">问卷调查</view>
+  </view>
+  <view class="nav-banner" bindtap="vote">
+    <view class="nav-banner-img">
+      <image src="../../icon/vote.png" mode="widthFix"></image>
+    </view>
+    <view class="description">民主投票</view>
+  </view>
+</view>

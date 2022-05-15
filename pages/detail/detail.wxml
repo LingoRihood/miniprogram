@@ -1,0 +1,109 @@
+<!--pages/detail/detail.wxml-->
+<view class="msg">
+  <!-- 左边为头像部分 -->
+  <view class="left">
+    <image class="face-img" src="{{action.faceImg}}" mode="widthFix"></image>
+  </view>
+  <!-- 右边为昵称、动态内容等详细部分 -->
+  <view class="right">
+    <!-- 用户昵称 -->
+    <view class="nickname">{{action.nickName}}</view>
+    <!-- 发布文字内容 -->
+    <view class="content">{{action.text}}</view>
+    <!-- 发布的图片模块 -->
+    <view class="imgs-wrap">
+      <block wx:for="{{action.images}}" wx:key="index">
+
+        <!-- 单图布局 -->
+        <block wx:if="{{action.images.length == 1}}">
+            <image src="{{item}}" mode="aspectFill" class="img1"></image>
+        </block>
+
+        <!-- 2-3张图布局 -->
+        <block wx:if="{{action.images.length == 2 || action.images.length == 3}}">
+          <image src="{{item}}" mode="aspectFill" class="img2-3"></image>
+        </block>
+
+        <!-- 4图布局 -->
+        <block wx:if="{{action.images.length == 4}}">
+          <image src="{{item}}" mode="aspectFill" class="img4"></image>
+        </block>
+
+        <!-- 5-9图布局 -->
+        <block wx:if="{{action.images.length > 4}}">
+          <image src="{{item}}" mode="aspectFill" class="img5-9"></image>
+        </block>
+      </block>
+    </view>
+
+    <!-- 时间和删除模块 -->
+    <view class="time-delete">
+      <view class="publish-time">{{action.time}}</view>
+      <view class="delete" bindtap="delete" wx:if="{{openid == action._openid}}">删除</view>
+    </view>
+    <view class="bottom">
+      <view class="bottom-item">
+        <image src="../../icon/share.png" class="bottom-icon" mode="widthFix"></image>
+        <view>分享</view>
+      </view>
+      <view class="bottom-item">
+        <image src="../../icon/comment.png" class="bottom-icon" mode="widthFix"></image>
+        <view>评论</view>
+      </view>
+      <!-- 点赞功能图标 -->
+      <view class="bottom-item" bindtap="likeAction">
+        <image src="{{action.isLiked ? '../../icon/likeon.png' : '../../icon/like.png'}}" class="bottom-icon" mode="widthFix"></image>
+        <view>点赞</view>
+      </view>
+    </view>  
+  </view>
+</view>
+<!-- 点赞板块 -->
+<view class="like-box" wx:if="{{action.likeList.length != 0}}">
+    <!-- 点赞图标 -->
+    <view>
+      <image src="../../icon/likeicon.png" mode="widthFix" class="like-img"></image>
+    </view>
+    <!-- 点赞用户头像列表 -->
+    <view class="like-icon-list">
+      <block wx:for="{{action.likeList}}" wx:key="index">
+        <image class="like-icon" src="{{item.faceImg}}" mode="aspectFill"></image>
+      </block>
+    </view>
+  </view>
+<!-- 评论板块 -->
+<view class="comment-box" wx:if="{{action.commentList.length != 0}}">
+  <view class="comment-left">
+    <image src="../../icon/commenticon.png" mode="widthFix" class="comment-logo"></image>
+  </view>
+  <!-- 评论详情：包括评论用户头像、昵称、评论内容等 -->
+  <view class="comment-right">
+    <block wx:for="{{action.commentList}}" wx:key="index">
+      <view class="comment-item">
+        <image class="comment-face" src="{{item.faceImg}}" mode="aspectFill"></image>
+        <view class="comment-content">
+          <view class="nickname-time">
+            <view class="comment-nickname">{{item.nickName}}</view>
+            <view class="comment-time">{{item.time}}</view>
+          </view>
+          <view class="comment-text">回复<text class="comment-obj">程序员</text><text>：{{item.text}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- 防止固定定位挡住评论区最后一条评论信息 -->
+<view style="height: 60rpx;"></view>
+
+<!-- 发布评论板块 -->
+<view class="pub-comment">
+  <view class="pub-left">
+    <input class="pub-input" placeholder="评论" bindinput="getInputValue" type="text"/>
+  </view>
+  <view class="pub-button" bindtap="publishComment">发送</view>
+</view>
+
+
+

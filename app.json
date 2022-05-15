@@ -1,0 +1,48 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/notice/notice",
+        "pages/bbs/bbs",
+        "pages/mine/mine",
+        "pages/detail/detail",
+        "pages/publish/publish"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#f47920",
+        "navigationBarTitleText": "万科物业",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#D7A86E"        
+    },
+    "tabBar": {
+        "list":[{
+            "pagePath": "pages/index/index",
+            "text": "首页",
+            "iconPath": "icon/_home.png",
+            "selectedIconPath": "icon/home.png"
+        },
+        {
+            "pagePath": "pages/notice/notice",
+            "text": "疫情公告",
+            "iconPath": "icon/_public.png",
+            "selectedIconPath": "icon/public.png"
+        },
+        {
+            "pagePath": "pages/bbs/bbs",
+            "text": "社区论坛",
+            "iconPath": "icon/_bbs.png",
+            "selectedIconPath": "icon/bbs.png"
+        },
+        {
+            "pagePath": "pages/mine/mine",
+            "text": "个人中心",
+            "iconPath": "icon/_user.png",
+            "selectedIconPath": "icon/user.png"
+        }
+    ],
+    "backgroundColor": "#FDF6EC"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "cloud": true
+}

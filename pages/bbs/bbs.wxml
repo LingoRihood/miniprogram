@@ -1,0 +1,88 @@
+<!--pages/bbs/bbs.wxml-->
+<!-- 发布入口模块 -->
+<view class="camera-box">
+  <image src="../../icon/camera.png" mode="widthFix" class="camera-img" bindtap="onPublish"></image>
+</view>
+
+<!-- 帖子模块 -->
+<block wx:for="{{actionsList}}" wx:key="index">
+  <view class="msg" bindtap="toDetail" data-id="{{item._id}}">
+    <!-- 左边为头像部分 -->
+    <view class="left">
+      <image class="face-img" src="{{item.faceImg}}" mode="widthFix"></image>
+    </view>
+    <!-- 右边为昵称、动态内容等详细部分 -->
+    <view class="right">
+      <view class="nickname">{{item.nickName}}</view>
+      <view class="content">{{item.text}}</view>
+      <view class="imgs-wrap">
+        <!-- 单图布局 -->
+        <block wx:if="{{item.images.length == 1}}" wx:for="{{item.images}}" wx:for-item="imgItem" wx:for-index="imgIndex" wx:key="imgIndex">
+          <image src="{{imgItem}}" mode="aspectFill" class="img1"></image>
+        </block>
+
+        <!-- 2-3张图布局 -->
+        <block wx:if="{{item.images.length == 2 || item.images.length == 3}}" wx:for="{{item.images}}" wx:for-item="imgItem" wx:for-index="imgIndex" wx:key="imgIndex">
+          <image src="{{imgItem}}" mode="aspectFill" class="img2-3"></image>
+        </block>
+
+        <!-- 4图布局 -->
+        <block wx:if="{{item.images.length == 4}}" wx:for="{{item.images}}" wx:for-item="imgItem" wx:for-index="imgIndex" wx:key="imgIndex">
+          <image src="{{imgItem}}" mode="aspectFill" class="img4"></image>
+        </block>
+
+        <!-- 5-9图布局 -->
+        <block wx:for="{{item.images}}" wx:for-item="imgItem" wx:for-index="imgIndex" wx:key="imgIndex" wx:if="{{item.images.length > 4}}">
+          <image src="{{imgItem}}" mode="aspectFill" class="img5-9"></image>
+        </block>
+      </view>
+
+      <!-- 时间和删除模块 -->
+      <view class="time-delete">
+        <view class="publish-time">{{item.time}}</view>
+        <view class="delete" wx:if="{{myopenid == item._openid}}" catchtap="deleteAction" data-id="{{item._id}}">删除</view>
+      </view>
+      <view class="bottom">
+        <view class="bottom-item">
+          <image src="../../icon/share.png" class="bottom-icon" mode="widthFix"></image>
+          <view>分享</view>
+        </view>
+        <view class="bottom-item">
+          <image src="../../icon/comment.png" class="bottom-icon" mode="widthFix"></image>
+          <view>评论</view>
+        </view>
+        <!-- 点赞功能图标 -->
+        <view class="bottom-item" catchtap="likeAction" data-id="{{item._id}}">
+          <image src="{{item.isLiked ? '../../icon/likeon.png' : '../../icon/like.png'}}" class="bottom-icon" mode="widthFix"></image>
+          <view>点赞</view>
+        </view>
+      </view>
+      <!-- 点赞列表 -->
+      <view class="like-list" wx:if="{{item.likeList.length != 0}}">
+        <!-- 点赞图标 -->
+        <image src="../../icon/likeicon.png" mode="widthFix" class="like-img" ></image>
+        <!-- 点赞用户昵称列表 -->
+        <block wx:for="{{item.likeList}}" wx:for-item="nickNameItem" wx:for-index="nickNameIndex" wx:key="nickNameIndex">
+          <view>{{nickNameItem.nickName}}</view>
+          <!-- 最后一个点赞人后面不能有逗号！ -->
+          <view class="comma" hidden="{{nickNameIndex == item.likeList.length - 1 ? true : false}}">,</view>
+        </block>
+      </view>
+      <!-- 评论列表 -->
+      <view class="comment-box" wx:if="item.commentList.length != 0">
+        <block wx:for="{{item.commentList}}" wx:for-item="commentItem" wx:for-index="commentIndex" wx:key="commentIndex">
+          <view class="comment-content">
+            <text class="comment-nickname">{{commentItem.nickName}}</text>
+            <text>回复</text>
+            <text class="comment-nickname">coder</text>
+            <text>：{{commentItem.text}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</block>
+
+
+
+

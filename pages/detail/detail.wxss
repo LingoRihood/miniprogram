@@ -1,0 +1,218 @@
+/* pages/detail/detail.wxss */
+.msg {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 20rpx 20rpx 10rpx;
+  box-sizing: border-box;
+}
+
+.msg .left {
+  padding-right: 15rpx;
+}
+
+.left .face-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+
+.msg .right {
+  /* 索取剩余空间 */
+  flex-grow: 1;
+}
+
+.right .nickname {
+  color: #586B94;
+  font-weight: 600;
+  font-size: 33rpx;
+  padding-bottom: 15rpx;
+}
+
+.right .imgs-wrap {
+  margin-top: 10rpx;
+}
+
+/* 根据发布的图片数量进行选择的样式 */
+.imgs-wrap .img1 {
+  width: 410rpx;
+  height: 300rpx;
+  margin-right: 9rpx;
+}
+
+.imgs-wrap .img2-3 {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 9rpx;
+}
+
+.imgs-wrap .img4 {
+  width: 240rpx;
+  height: 240rpx;
+  margin-right: 9rpx;
+}
+
+.imgs-wrap .img5-9 {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 9rpx;
+}
+
+.right .time-delete {
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  margin: 10rpx auto;
+}
+
+.time-delete .publish-time {
+  color: #666;
+  margin-right: 20rpx;
+}
+
+/* 删除动态样式 */
+.time-delete .delete {
+  color: #035397;
+}
+
+.right .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #666;
+  margin: 10rpx auto;
+}
+
+.bottom .bottom-item {
+  display: flex;
+  flex-direction: row;
+  /* 垂直居中 */
+  align-items: center;
+}
+
+.bottom-item .bottom-icon {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 10rpx;
+}
+
+/* 点赞板块样式 */
+.like-box {
+  display: flex;
+  flex-direction: row;
+  background-color: #FDF6EC;
+  padding: 10rpx 10rpx;
+  margin: 0 16rpx;
+  border-bottom: 2rpx solid #EDEDED;
+}
+
+.like-box .like-img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+  margin-top: 30rpx;
+}
+
+.like-box .like-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 5rpx 5rpx;
+}
+
+.like-box .like-icon-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/* 评论板块样式 */
+.comment-box {
+  display: flex;
+  flex-direction: row;
+  background-color: #FDF6EC;
+  padding: 10rpx 10rpx;
+  margin: 0 16rpx;
+}
+
+.comment-left .comment-logo {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+  margin-top: 30rpx;
+}
+
+.comment-right .comment-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+}
+
+.comment-item .comment-face {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 5rpx 5rpx;
+  margin-right: 20rpx;
+}
+
+.comment-item .comment-content {
+  width: 550rpx;
+}
+
+.comment-content .nickname-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 550rpx;
+}
+
+.comment-content .comment-nickname {
+  font-weight: 550;
+  color: #586B94;
+}
+
+.comment-content .comment-time {
+  color: #7f7f7f;
+  font-size: 28rpx;
+}
+
+.comment-content .comment-text {
+  margin-top: 8rpx;
+}
+
+.comment-content .comment-obj {
+  font-weight: 550;
+  color: #586B94;
+}
+
+/* 固定在下方的发表评论板块样式 */
+.pub-comment {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background-color: #4E944F;
+  padding: 10rpx 26rpx;
+  box-sizing: border-box;
+}
+
+.pub-comment .pub-left {
+  background-color: #fff;
+  color: #7f7f7f;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+.pub-left .pub-input {
+  padding: 10rpx 20rpx;
+  width: 520rpx;
+}
+
+.pub-comment .pub-button {
+  background-color: #FEE2C5;
+  color: #EE5007;
+  border: 3rpx solid #15133C;
+  border-radius: 10rpx;
+  padding: 8rpx 26rpx;
+}

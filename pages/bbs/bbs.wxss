@@ -1,0 +1,145 @@
+/* pages/bbs/bbs.wxss */
+/* 发布入口样式 */
+.camera-box {
+  text-align: right;
+  margin: 8rpx 20rpx 0 0;
+}
+
+.camera-box .camera-img {
+  width: 65rpx;
+}
+
+/* 帖子样式 */
+.msg {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 3rpx 20rpx 40rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.msg .left {
+  padding-right: 15rpx;
+}
+
+.left .face-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+
+.right .nickname {
+  color: #586B94;
+  font-weight: 600;
+  font-size: 33rpx;
+  padding-bottom: 15rpx;
+}
+
+.right .imgs-wrap {
+  margin-top: 10rpx;
+}
+
+/* 根据发布的图片数量进行选择的样式 */
+.imgs-wrap .img1 {
+  width: 410rpx;
+  height: 300rpx;
+  margin-right: 9rpx;
+}
+
+.imgs-wrap .img2-3 {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 9rpx;
+}
+
+.imgs-wrap .img4 {
+  width: 240rpx;
+  height: 240rpx;
+  margin-right: 9rpx;
+}
+
+.imgs-wrap .img5-9 {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 9rpx;
+}
+
+.right .time-delete {
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  margin: 10rpx auto;
+}
+
+.time-delete .publish-time {
+  color: #666;
+  margin-right: 20rpx;
+}
+
+.time-delete .delete {
+  color: #035397;
+}
+
+.right .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #666;
+  margin: 10rpx auto;
+}
+
+.bottom .bottom-item {
+  display: flex;
+  flex-direction: row;
+  /* 垂直居中 */
+  align-items: center;
+}
+
+.bottom-item .bottom-icon {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 10rpx;
+}
+
+/* 点赞列表模块样式 */
+.msg .like-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #FDF6EC;
+  margin-top: 20rpx;
+  padding: 10rpx 10rpx;
+  color: #586B94;
+  font-size: 30rpx;
+  border-bottom: 2rpx solid #EDEDED;
+}
+
+/* 逗号分隔 */
+.msg .like-list .comma {
+  color: black;
+}
+
+.like-list .like-img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.msg .comment-box {
+  background-color: #FDF6EC;
+  padding: 10rpx 10rpx;
+  font-size: 30rpx;
+}
+
+.comment-box .comment-content {
+  padding-bottom: 8rpx;
+}
+
+.comment-box .comment-nickname {
+  color: #586B94;
+}
+
+
+
+
