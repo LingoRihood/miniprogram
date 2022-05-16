@@ -32,7 +32,7 @@ Page({
         url: '/pages/mine/mine',
       })
       wx.showToast({
-        title: '请进行登陆授权',
+        title: '请进行登录授权',
         icon: 'error',
         duration: 2000
       })
@@ -77,7 +77,7 @@ Page({
     // 降序排列
     db.collection('actions').orderBy('time', 'desc').get({
       success(res) {
-        console.log(res)
+        // console.log(res)
         // 格式化时间
         let list = res.data
         for(let i in list) {
@@ -121,7 +121,7 @@ Page({
         url: '/pages/mine/mine',
       })
       wx.showToast({
-        title: '请进行登陆授权',
+        title: '请进行登录授权',
         icon: 'error',
         duration: 2000
       })

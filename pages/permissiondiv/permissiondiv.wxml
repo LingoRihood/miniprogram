@@ -1,0 +1,8 @@
+<!--pages/permissiondiv/permissiondiv.wxml-->
+<view class="containerbox">
+  <!-- 权限选择 -->
+  <view class="permissionbox"> 
+    <button type="primary" bindtap="user">住户</button>
+    <button type="primary" bindtap="admin">管理员</button>
+  </view>
+</view>

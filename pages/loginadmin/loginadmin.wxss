@@ -1,0 +1,52 @@
+/* pages/loginadmin/loginadmin.wxss */
+.containerbox {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.containerbox .loginbox {
+  width: 666rpx;
+  height: 400rpx;
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+  background: rgba(0, 0, 0, .8);
+  box-shadow: 0 6rpx 15rpx 6rpx rgba(0, 0, 0, .5);
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+
+.loginbox .flexdisplay {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin: 52rpx 33rpx;
+}
+
+.flexdisplay .hint {
+  margin-right: 20rpx;
+  color: #fff;
+  text-align: left;
+  font-size: 40rpx;
+  font-weight: 530;
+}
+
+.flexdisplay .hint.pwd {
+  padding-right: 40rpx;
+}
+
+.flexdisplay .inputbox {
+  font-size: 33rpx;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  box-sizing: border-box;
+}

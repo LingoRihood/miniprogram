@@ -1,0 +1,21 @@
+<!--pages/myaccount/myaccount.wxml-->
+<view style="width: 100%; height: 100rpx;"></view>
+ 
+<view class="accountbox">
+  <view class="boxitem">
+    <view class="term">姓名：</view>
+    <view class="content">{{myname}}</view>
+  </view>
+  <view class="boxitem">
+    <view class="term">电话：</view>
+    <view class="content">{{myphone}}</view>
+  </view>
+  <view class="boxitem">
+    <view class="term">单元：</view>
+    <view class="content">{{mysection}}</view>
+  </view>
+  <view class="boxitem">
+    <view class="term">房室：</view>
+    <view class="content">{{myhouse}}</view>
+  </view>
+</view>

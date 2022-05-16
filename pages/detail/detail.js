@@ -181,7 +181,7 @@ Page({
         url: '/pages/mine/mine',
       })
       wx.showToast({
-        title: '请进行登陆授权',
+        title: '请进行登录授权',
         icon: 'error',
         duration: 2000
       })

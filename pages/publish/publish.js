@@ -89,7 +89,7 @@ Page({
     this.setData({
       tempImgList: this.data.tempImgList
     })
-  },
+  }, 
 
   // 上传到发布动态的数据集合actions中
   submitToDB: function() {

@@ -5,7 +5,11 @@
         "pages/bbs/bbs",
         "pages/mine/mine",
         "pages/detail/detail",
-        "pages/publish/publish"
+        "pages/publish/publish",
+        "pages/login/login",
+        "pages/loginadmin/loginadmin",
+        "pages/myaccount/myaccount",
+        "pages/permissiondiv/permissiondiv"
     ],
     "window": {
         "backgroundTextStyle": "dark",

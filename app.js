@@ -17,7 +17,7 @@ App({
         // console.log(res);
         // 将用户的openid添加进全局变量
         that.globalData.openid = res.result.openid
-        // console.log(that.globalData);
+        // console.log(that.globalData.openid);
         // 查看数据库登录用户表里是否有这个用户记录
         wx.cloud.database().collection('login_users').where({
           _openid: res.result.openid
@@ -25,9 +25,11 @@ App({
           success(result) {
             // console.log(result);
             that.globalData.userInfo = result.data[0]
+            that.setData({
+              phonelen: result.data.length
+            })
           }
         })
-
       }
     })
 
@@ -35,6 +37,8 @@ App({
   // 全局数据
   globalData: {
     userInfo: null,
-    openid: null
+    openid: null,
+    // 存放用户的手机号姓名和密码
+    userDetail: {}
   }
 })

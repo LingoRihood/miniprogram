@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+<view class="containerbox">
+  <view class="loginbox"> 
+    <view class="flexdisplay">
+      <!-- 限定手机号输入数字为11 -->
+      <view class="hint">手机号</view>
+      <input class="inputbox" type="number" placeholder="请输入手机号" maxlength="11" bindinput="togetPhonenum"/>
+    </view>
+    <view class="flexdisplay">
+      <!-- 限定密码输入个数为6 -->
+      <view class="hint pwd">密码</view>
+      <input class="inputbox" type="number" placeholder="请输入身份证后六位" maxlength="6" bindinput="togetpwd"/>
+    </view>
+    <button type="primary" class="loginbutton" bindtap="tologin">登录</button>
+  </view>
+</view>
