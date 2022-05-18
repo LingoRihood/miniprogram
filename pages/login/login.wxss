@@ -43,10 +43,10 @@
 .flexdisplay .inputbox {
   font-size: 33rpx;
   color: #fff;
-  letter-spacing: 2px;
+  letter-spacing: 4rpx;
   margin-top: 10rpx;
   margin-left: 20rpx;
-  border-bottom: 1px solid #fff;
+  border-bottom: 2rpx solid #fff;
   background: transparent;
   box-sizing: border-box;
 }

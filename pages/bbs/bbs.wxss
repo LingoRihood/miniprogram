@@ -28,6 +28,10 @@
   border-radius: 10rpx;
 }
 
+.msg .right {
+  flex-grow: 1;
+}
+
 .right .nickname {
   color: #586B94;
   font-weight: 600;
@@ -79,14 +83,14 @@
 .time-delete .delete {
   color: #035397;
 }
-
+ 
 .right .bottom {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   color: #666;
   margin: 10rpx auto;
-}
+} 
 
 .bottom .bottom-item {
   display: flex;

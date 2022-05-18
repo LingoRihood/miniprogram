@@ -9,7 +9,13 @@
         "pages/login/login",
         "pages/loginadmin/loginadmin",
         "pages/myaccount/myaccount",
-        "pages/permissiondiv/permissiondiv"
+        "pages/permissiondiv/permissiondiv",
+        "pages/mytrack/mytrack",
+        "pages/mytrackPub/mytrackPub",
+        "pages/questionnaire/questionnaire",
+        "pages/vote/vote",
+        "pages/partyb/partyb",
+        "pages/complainAdv/complainAdv"
     ],
     "window": {
         "backgroundTextStyle": "dark",

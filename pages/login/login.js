@@ -121,15 +121,16 @@ Page({
                     },
                     success(result) {
                       // console.log(res);
+                      // 全局添加用户数据
+                      app.globalData.userInfo = res.data[0]
+                      app.globalData.userInfo.realName = userDetail.user_name
+                      app.globalData.userInfo.userphone = userDetail.user_phone
+                      app.globalData.userInfo.userhouse = userDetail.user_house
+                      app.globalData.userInfo.usersection = userDetail.user_section
+                      app.globalData.userInfo.isAdmin = userDetail.isAdmin
                     }
                   })
-                  // 全局添加用户数据
-                  app.globalData.userInfo = res.data[0]
-                  app.globalData.userInfo.realName = userDetail.user_name
-                  app.globalData.userInfo.userphone = userDetail.user_phone
-                  app.globalData.userInfo.userhouse = userDetail.user_house
-                  app.globalData.userInfo.usersection = userDetail.user_section
-                  app.globalData.userInfo.isAdmin = userDetail.isAdmin
+                  
                   // // 页面也添加用户数据
                   // that.setData({
                   //   userInfo: res.data[0]

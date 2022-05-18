@@ -1,0 +1,41 @@
+/* pages/mytrack/mytrack.wxss */
+/* 发布入口样式 */
+.uploadbox {
+  text-align: right;
+  margin: 8rpx 20rpx 0 0;
+}
+
+.uploadbox .upload-img {
+  width: 100rpx;
+}
+
+/* 历史行程轨迹样式 */
+.time-content {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 10rpx auto;
+}
+ 
+.time-content .time {
+  margin-bottom: 20rpx;
+  color: #666;
+}
+
+.time-content .content {
+  text-indent: 2em;
+  font-size: 35rpx;
+  letter-spacing: 3rpx;
+  line-height: 50rpx;
+}
+
+.time-content .content.highlight {
+  color: red;
+}
+
+.time-content .delete {
+  text-align: right;
+  color: #035397;
+  margin-top: 10rpx;
+  margin-right: 36rpx;
+}

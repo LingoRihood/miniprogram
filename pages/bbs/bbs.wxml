@@ -1,9 +1,9 @@
 <!--pages/bbs/bbs.wxml-->
-<!-- 发布入口模块 -->
+<!-- 发布入口模块 --> 
 <view class="camera-box">
   <image src="../../icon/camera.png" mode="widthFix" class="camera-img" bindtap="onPublish"></image>
-</view>
-
+</view> 
+  
 <!-- 帖子模块 -->
 <block wx:for="{{actionsList}}" wx:key="index">
   <view class="msg" bindtap="toDetail" data-id="{{item._id}}">
@@ -36,7 +36,7 @@
           <image src="{{imgItem}}" mode="aspectFill" class="img5-9"></image>
         </block>
       </view>
-
+ 
       <!-- 时间和删除模块 -->
       <view class="time-delete">
         <view class="publish-time">{{item.time}}</view>
@@ -69,7 +69,7 @@
         </block>
       </view>
       <!-- 评论列表 -->
-      <view class="comment-box" wx:if="item.commentList.length != 0">
+      <view class="comment-box" wx:if="{{item.commentList.length != 0}}">
         <block wx:for="{{item.commentList}}" wx:for-item="commentItem" wx:for-index="commentIndex" wx:key="commentIndex">
           <view class="comment-content">
             <text class="comment-nickname">{{commentItem.nickName}}</text>

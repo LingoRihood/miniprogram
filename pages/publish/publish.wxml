@@ -7,7 +7,7 @@
 <!-- 发表文字内容模块 -->
 <view class="input-wrap">
     <textarea placeholder="这一刻的想法..." class="input-text" maxlength="-1" bindinput="getValue"></textarea>
-</view>
+</view> 
 
 <!-- 发布图片模块 -->
 <view class="img-wrap">

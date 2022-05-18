@@ -1,0 +1,22 @@
+<!--pages/mytrack/mytrack.wxml-->
+<!-- 上传入口模块 -->
+<view class="uploadbox">
+  <image src="../../icon/upload.png" mode="widthFix" class="upload-img" bindtap="onUpload"></image>
+</view>
+ 
+<!-- 历史行程轨迹模块 -->
+<block wx:for="{{trackList}}" wx:key="index">
+  <view class="time-content">
+    <view class="time">{{item.time}}</view>
+    <text class="content">{{item.text}}</text>
+    <view class="delete" bindtap="deleteTrack" data-id="{{item._id}}">删除</view>
+  </view>
+  <view style="height: 50rpx;"></view>
+</block>
+
+<!-- 示例 -->
+<view class="time-content">
+    <view class="time">2022/5/16 12:00</view>
+    <view class="content">行动轨迹的内容要求示范：起始点是家，终点也是家，例如从家到长沙金融国际中心到万达影院到雨花区南雅中学到万家丽商场到家 </view>
+    <view class="content highlight">疫情当头，国家有难，请各位住户业主务必把每日行程轨迹写详细些，认真对待，感谢您的支持与配合！</view>
+</view>

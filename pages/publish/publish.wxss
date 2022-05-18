@@ -23,7 +23,7 @@
 }
 
 .input-wrap .input-text {
-  height: 200rpx;
+  height: 250rpx;
   width: 100%;
 }
 

@@ -17,6 +17,7 @@
 
 <!-- 功能 -->
 <view class="function">
+  <!-- 我的账户信息功能模块 -->
   <view class="function-item" bindtap="myaccount">
     <view class="function-img">
       <image src="../../icon/myaccount.png" mode="widthFix"></image>
@@ -26,11 +27,12 @@
       <image src="../../icon/arrow.png" mode="widthFix"></image>
     </view>
   </view>
-  <view class="function-item">
+  <!-- 行动轨迹上传功能模块 -->
+  <view class="function-item" bindtap="mytrack">
     <view class="function-img">
       <image src="../../icon/track.png" mode="widthFix"></image>
     </view>
-    <view class="funcInfo">行动轨迹</view>
+    <view class="funcInfo">行动轨迹上传</view>
     <view class="arrow">
       <image src="../../icon/arrow.png" mode="widthFix"></image>
     </view>
@@ -71,7 +73,8 @@
       <image src="../../icon/arrow.png" mode="widthFix"></image>
     </view>
   </view>
-  <view class="function-item">
+  <!-- 智慧党建功能模块 -->
+  <view class="function-item" bindtap="partyBuild">
     <view class="function-img">
       <image src="../../icon/ccp.png" mode="widthFix"></image>
     </view>
@@ -80,7 +83,8 @@
       <image src="../../icon/arrow.png" mode="widthFix"></image>
     </view>
   </view>
-  <view class="function-item">
+  <!-- 投诉建议功能模块 -->
+  <view class="function-item" bindtap="complainAdv">
     <view class="function-img">
       <image src="../../icon/complaint.png" mode="widthFix"></image>
     </view>

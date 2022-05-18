@@ -68,7 +68,6 @@ Page({
         that.getActionList()
       }
     })
-    
   },
 
   // 获取动态列表
@@ -104,7 +103,6 @@ Page({
             list[k].commentList[j].time = timeform.formatTime(new Date(list[k].commentList[j].time))
           }
         }
-
         that.setData({
           actionsList: list
         })
@@ -228,7 +226,6 @@ Page({
    */
   onPullDownRefresh: function () {
     this.getActionList()
-
     setTimeout(wx.stopPullDownRefresh, 600)
   },
 

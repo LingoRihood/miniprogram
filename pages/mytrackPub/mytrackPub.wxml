@@ -1,0 +1,10 @@
+<!--pages/mytrackPub/mytrackPub.wxml-->
+<!-- 上传模块 -->
+<view class="pub-wrap">
+  <view class="pub-text" bindtap="submitData">上传</view>
+</view>
+
+<!-- 上传行程轨迹内容模块 -->
+<view class="input-wrap">
+    <textarea placeholder="请填写今日行程轨迹内容" class="input-text" maxlength="-1" bindinput="getValue"></textarea>
+</view>

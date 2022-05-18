@@ -29,7 +29,7 @@ Page({
     })
   },
 
-  // 进入我的账户
+  // 进入我的账户信息查看
   myaccount: function() {
     // 进入我的账户之前必须授权登陆，否则提醒授权登录
     if(app.globalData.userInfo == null) {
@@ -47,7 +47,66 @@ Page({
       url: '/pages/myaccount/myaccount',
       })
     }
-    
+  },
+
+  // 上传行动轨迹
+  mytrack: function() {
+    // 在上传行动轨迹之前必须授权登陆，否则提醒授权登录
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    }
+    else {
+      wx.navigateTo({
+      url: '/pages/mytrack/mytrack',
+      })
+    }
+  },
+
+  // 智慧党建模块
+  partyBuild: function() {
+    // 在进入智慧党建模块之前必须授权登陆，否则提醒授权登录
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    }
+    else {
+      wx.navigateTo({
+      url: '/pages/partyb/partyb',
+      })
+    }
+  },
+
+  // 投诉建议模块
+  complainAdv: function() {
+    // 在进入投诉建议模块之前必须授权登陆，否则提醒授权登录
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    }
+    else {
+      wx.navigateTo({
+      url: '/pages/partyb/partyb',
+      })
+    }
   },
 
   // 退出登录
@@ -73,7 +132,6 @@ Page({
       // 更新用户信息
       userInfo: app.globalData.userInfo
     })
-    // console.log(this.data.userInfo);
   },
 
   /**

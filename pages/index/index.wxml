@@ -60,7 +60,7 @@
       <image src="../../icon/contact.png" mode="widthFix"></image>
     </view>
     <view class="description">联系物业</view>
-  </view>
+  </view> 
   <view class="nav-banner" bindtap="questionnaire">
     <view class="nav-banner-img">
       <image src="../../icon/questionnaire.png" mode="widthFix"></image>
