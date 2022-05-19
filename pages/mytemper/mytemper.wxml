@@ -1,0 +1,54 @@
+<!--pages/mytemper/mytemper.wxml-->
+<view class="container">
+  <!-- 姓名 -->
+  <view class="question-wrap">
+    <view class="question-title">{{questions[0].id}}. {{questions[0].title}}</view>
+    <view class="answer-content">
+      <input data-qid="1" data-value="姓名" bindinput="onInput" type="text" placeholder="请填写姓名" class="input-text"/>
+    </view>
+  </view>
+  <!-- 性别 -->
+  <view class="question-wrap" wx:if="{{gender == true}}">
+    <view class="question-title">{{questions[1].id}}. {{questions[1].title}}</view>
+    <view class="answer-content">
+      <radio-group data-qid="2" data-value="性别" bindchange="onRadioChange">
+        <label class="label-row" wx:for="{{questions[1].options}}" wx:key="index">
+          <radio value="{{item.option_value}}">{{item.option_value}}</radio>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <!-- 体温 -->
+  <view class="question-wrap" wx:if="{{temp == true}}">
+    <view class="question-title">{{questions[2].id}}. {{questions[2].title}}</view>
+    <view class="answer-content">
+      <input data-qid="3" data-value="体温"  bindinput="onInput" type="digit" placeholder="例如测出是36.6­°C则填36.6" class="input-text"/>
+    </view>
+  </view>
+  <!-- 所在单元 -->
+  <view class="question-wrap" wx:if="{{section == true}}">
+    <view class="question-title">{{questions[3].id}}. {{questions[3].title}}</view>
+    <view class="answer-content">
+      <input data-qid="4" data-value="所在单元"  bindinput="onInput" type="number" placeholder="例如在第10单元则填10" class="input-text"/>
+    </view>
+  </view>
+  <!-- 所在房号 -->
+  <view class="question-wrap" wx:if="{{house == true}}">
+    <view class="question-title">{{questions[4].id}}. {{questions[4].title}}</view>
+    <view class="answer-content">
+      <input data-qid="5" data-value="所在房号"  bindinput="onInput" type="number" placeholder="例如在第9层的03室则填903" class="input-text"/>
+    </view>
+  </view>
+  <!-- 身体不适情况 -->
+  <view class="question-wrap" wx:if="{{situation == true}}">
+    <view class="question-title">{{questions[5].id}}. {{questions[5].title}}</view>
+    <view class="answer-content">
+      <checkbox-group data-qid="6" data-value="身体不适情况" bindchange="onCheckboxChange">
+        <label class="label-row" wx:for="{{questions[5].options}}" wx:key="index">
+          <checkbox value="{{item.option_value}}" class="checkbox">{{item.option_value}}</checkbox>
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <button type="primary" bindtap="onSubmit" disabled="{{sub != true}}">提交</button>
+</view>

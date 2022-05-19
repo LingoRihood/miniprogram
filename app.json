@@ -15,7 +15,9 @@
         "pages/questionnaire/questionnaire",
         "pages/vote/vote",
         "pages/partyb/partyb",
-        "pages/complainAdv/complainAdv"
+        "pages/complainAdv/complainAdv",
+        "pages/mytemper/mytemper",
+        "pages/volunteer/volunteer"
     ],
     "window": {
         "backgroundTextStyle": "dark",

@@ -41,7 +41,7 @@
 
 /* 功能模块样式 */
 .function {
-  margin-top: 30rpx;
+  margin: 30rpx auto;
 }
 
 .function-item {

@@ -121,13 +121,13 @@ Page({
                     },
                     success(result) {
                       // console.log(res);
-                      // 全局添加用户数据
-                      app.globalData.userInfo = res.data[0]
-                      app.globalData.userInfo.realName = userDetail.user_name
-                      app.globalData.userInfo.userphone = userDetail.user_phone
-                      app.globalData.userInfo.userhouse = userDetail.user_house
-                      app.globalData.userInfo.usersection = userDetail.user_section
-                      app.globalData.userInfo.isAdmin = userDetail.isAdmin
+                      // // 全局添加用户数据
+                      // app.globalData.userInfo = res.data[0]
+                      // app.globalData.userInfo.realName = userDetail.user_name
+                      // app.globalData.userInfo.userphone = userDetail.user_phone
+                      // app.globalData.userInfo.userhouse = userDetail.user_house
+                      // app.globalData.userInfo.usersection = userDetail.user_section
+                      // app.globalData.userInfo.isAdmin = userDetail.isAdmin
                     }
                   })
                   
@@ -137,13 +137,27 @@ Page({
                   // })
                   // console.log(app.globalData.userInfo);
                 }
-                
-                // 显示授权成功
-                wx.showToast({
-                  title: '授权成功',
-                  icon: 'success',
-                  duration: 2000
-                })
+                // 全局添加用户数据
+                app.globalData.userInfo = res.data[0]
+                app.globalData.userInfo.realName = userDetail.user_name
+                app.globalData.userInfo.userphone = userDetail.user_phone
+                app.globalData.userInfo.userhouse = userDetail.user_house
+                app.globalData.userInfo.usersection = userDetail.user_section
+                app.globalData.userInfo.isAdmin = userDetail.isAdmin
+
+                // // 显示授权成功
+                // wx.showToast({
+                //   title: '授权成功，请再次点击登录',
+                //   icon: 'success',
+                //   duration: 2000
+                // })
+
+                // wx.showToast({
+                //   title: '请再次点击登录',
+                //   icon: 'none',
+                //   duration: 2000
+                // })
+
                 wx.navigateBack({
                   delta: 2,
                 })

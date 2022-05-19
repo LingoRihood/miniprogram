@@ -37,7 +37,8 @@
       <image src="../../icon/arrow.png" mode="widthFix"></image>
     </view>
   </view>
-  <view class="function-item">
+  <!-- 体温上传功能板块 -->
+  <view class="function-item" bindtap="mytemperature">
     <view class="function-img">
       <image src="../../icon/temperature.png" mode="widthFix"></image>
     </view>
@@ -64,7 +65,8 @@
       <image src="../../icon/arrow.png" mode="widthFix"></image>
     </view>
   </view>
-  <view class="function-item">
+  <!-- 志愿者申请功能模块 -->
+  <view class="function-item" bindtap="onVolunteer">
     <view class="function-img">
       <image src="../../icon/volunteer.png" mode="widthFix"></image>
     </view>

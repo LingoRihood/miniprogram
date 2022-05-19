@@ -122,26 +122,35 @@ Page({
                         // console.log(res);
                       }
                     })
-                    // 全局添加用户数据
-                    app.globalData.userInfo = res.data[0]
-                    app.globalData.userInfo.realName = userDetail.adminName
-                    app.globalData.userInfo.userphone = userDetail.adminPhone
-                    app.globalData.userInfo.userhouse = userDetail.adminHouse
-                    app.globalData.userInfo.usersection = userDetail.adminSection
-                    app.globalData.userInfo.isAdmin = userDetail.isAdmin
+                    
                     // // 页面也添加用户数据
                     // that.setData({
                     //   userInfo: res.data[0]
                     // })
                     // console.log(app.globalData.userInfo);
                   }
+                  // 全局添加用户数据
+                  app.globalData.userInfo = res.data[0]
+                  app.globalData.userInfo.realName = userDetail.adminName
+                  app.globalData.userInfo.userphone = userDetail.adminPhone
+                  app.globalData.userInfo.userhouse = userDetail.adminHouse
+                  app.globalData.userInfo.usersection = userDetail.adminSection
+                  app.globalData.userInfo.isAdmin = userDetail.isAdmin
                   
-                  // 显示授权成功
-                  wx.showToast({
-                    title: '授权成功',
-                    icon: 'success',
-                    duration: 2000
-                  })
+                  // // 显示授权成功
+                  // wx.showToast({
+                  //   title: '授权成功',
+                  //   icon: 'success',
+                  //   duration: 2000
+                  // })
+                  // setTimeout(() => {
+                  //   wx.showToast({
+                  //     title: '正在加载中',
+                  //     icon: 'loading',
+                  //     duration: 2000
+                  //   })
+                  // }, 2000);
+
                   wx.navigateBack({
                     delta: 2,
                   })

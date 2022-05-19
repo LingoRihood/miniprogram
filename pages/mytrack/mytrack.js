@@ -36,7 +36,7 @@ Page({
     }).get({
       success(res) {
         console.log(res)
-        // let list = res.data
+        let list = res.data
         // 格式化时间
         for(let k in list) {
           list[k].time = timeform.formatTime(new Date(list[k].time))

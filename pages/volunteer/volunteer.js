@@ -1,6 +1,4 @@
-// pages/myaccount/myaccount.js
-const app = getApp()
-
+// pages/volunteer/volunteer.js
 Page({
 
   /**
@@ -14,14 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // console.log(app.globalData.userInfo);
-    this.setData({
-      myname: app.globalData.userInfo.realName,
-      myphone: app.globalData.userInfo.userphone,
-      mysection: app.globalData.userInfo.usersection,
-      myhouse: app.globalData.userInfo.userhouse,
-      isAdmin: app.globalData.userInfo.isAdmin
-    })
+
   },
 
   /**
@@ -35,7 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    // console.log(app.globalData.userInfo);
+
   },
 
   /**

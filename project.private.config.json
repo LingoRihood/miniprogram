@@ -71,6 +71,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/mytemper/mytemper",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/complainAdv/complainAdv",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

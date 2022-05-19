@@ -1,0 +1,39 @@
+/* pages/mytemper/mytemper.wxss */
+.container {
+  width: 90%;
+  /* background-color: purple; */
+  margin: 20rpx auto;
+}
+
+.container .question-wrap {
+  margin: 30rpx 5rpx;
+}
+
+.container .question-wrap .question-title {
+  font-size: 35rpx;
+  margin-bottom: 10rpx;
+  font-weight: 550;
+}
+
+.container .question-wrap .answer-content {
+  margin-left: 10rpx;
+}
+
+.container .question-wrap .answer-content .input-text {
+  height: 2em;
+  line-height: 2em;
+  letter-spacing: 3rpx;
+  border: 2rpx solid #666;
+  padding-left: 20rpx;
+  border-radius: 10rpx;
+}
+
+.container .question-wrap .label-row {
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.container .question-wrap .checkbox {
+  display: block;
+  margin: 12rpx;
+}
