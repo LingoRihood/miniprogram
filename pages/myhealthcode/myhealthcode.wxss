@@ -1,0 +1,21 @@
+/* pages/myhealthcode/myhealthcode.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 30rpx auto;
+}
+
+.container .img-item {
+  position: relative;
+  margin: 50rpx auto;
+}
+
+.img-item .close-img {
+  position: absolute;
+  right: 2rpx;
+  top: 2rpx;
+  width: 60rpx;
+  height: 60rpx;
+}

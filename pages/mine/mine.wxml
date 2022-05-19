@@ -47,7 +47,8 @@
       <image src="../../icon/arrow.png" mode="widthFix"></image>
     </view>
   </view>
-  <view class="function-item">
+  <!-- 健康码上传功能模块 -->
+  <view class="function-item" bindtap="onHealthCode">
     <view class="function-img">
       <image src="../../icon/healthcode.png" mode="widthFix"></image>
     </view>
@@ -56,7 +57,8 @@
       <image src="../../icon/arrow.png" mode="widthFix"></image>
     </view>
   </view>
-  <view class="function-item">
+  <!-- 行程码上传功能模块 -->
+  <view class="function-item" bindtap="onTravelCode">
     <view class="function-img">
       <image src="../../icon/travelcode.png" mode="widthFix"></image>
     </view>

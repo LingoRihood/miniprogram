@@ -123,6 +123,46 @@ Page({
     }
   },
 
+  // 健康码上传
+  onHealthCode: function() {
+    // 在进入健康码上传模块之前必须授权登陆，否则提醒授权登录
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    }
+    else {
+      wx.navigateTo({
+      url: '/pages/myhealthcode/myhealthcode',
+      })
+    }
+  },
+
+  // 行程码上传
+  onTravelCode: function() {
+    // 在进入行程码上传模块之前必须授权登陆，否则提醒授权登录
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    }
+    else {
+      wx.navigateTo({
+      url: '/pages/mytravelcode/mytravelcode',
+      })
+    }
+  },
+
   // 志愿者申请模块
   onVolunteer: function() {
     // 在进入志愿者申请模块之前必须授权登陆，否则提醒授权登录

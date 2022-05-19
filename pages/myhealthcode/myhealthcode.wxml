@@ -1,0 +1,11 @@
+<!--pages/myhealthcode/myhealthcode.wxml-->
+<view class="container">
+  <view class="img-item" wx:if="{{tempImgList.length != 0}}">
+    <image class="img-choose" src="{{tempImgList[0]}}" mode="aspectFill"></image>
+    <image class="close-img" src="../../icon/close.png" mode="widthFix" bindtap="deleteImg"></image>
+  </view>
+  <view class="img-item" bindtap="chooseImage" wx:if="{{tempImgList.length == 0}}">
+    <image class="img-choose" src="../../icon/add.png" mode="widthFix"></image>
+  </view>
+  <button type="primary" bindtap="onSubmit">上传健康码</button>
+</view>

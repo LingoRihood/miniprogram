@@ -17,7 +17,9 @@
         "pages/partyb/partyb",
         "pages/complainAdv/complainAdv",
         "pages/mytemper/mytemper",
-        "pages/volunteer/volunteer"
+        "pages/volunteer/volunteer",
+        "pages/myhealthcode/myhealthcode",
+        "pages/mytravelcode/mytravelcode"
     ],
     "window": {
         "backgroundTextStyle": "dark",

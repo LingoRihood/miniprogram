@@ -105,7 +105,7 @@ Page({
         // 动态下方评论信息数组
         commentList: []
       },
-      success(res) {
+      success(res) { 
         // console.log(res);
         // console.log(that.data.cloudImgList);
         wx.navigateBack({

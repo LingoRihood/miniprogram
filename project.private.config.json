@@ -85,6 +85,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/myhealthcode/myhealthcode",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/mytravelcode/mytravelcode",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
