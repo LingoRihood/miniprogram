@@ -33,6 +33,7 @@
     </view>
     <view class="description">停车场服务</view>
   </view>
+  <!-- 智慧门禁功能模块 -->
   <view class="nav-banner" bindtap="guard">
     <view class="nav-banner-img">
       <image src="../../icon/guard.png" mode="widthFix"></image>
@@ -55,18 +56,21 @@
     </view>
     <view class="description">报事报修</view>
   </view>
+  <!-- 联系物业功能模块 -->
   <view class="nav-banner" bindtap="contact">
     <view class="nav-banner-img">
       <image src="../../icon/contact.png" mode="widthFix"></image>
     </view>
     <view class="description">联系物业</view>
   </view> 
+  <!-- 问卷调查功能模块 -->
   <view class="nav-banner" bindtap="questionnaire">
     <view class="nav-banner-img">
       <image src="../../icon/questionnaire.png" mode="widthFix"></image>
     </view>
     <view class="description">问卷调查</view>
   </view>
+  <!-- 民主投票功能模块 -->
   <view class="nav-banner" bindtap="vote">
     <view class="nav-banner-img">
       <image src="../../icon/vote.png" mode="widthFix"></image>

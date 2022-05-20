@@ -21,9 +21,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    
+
   },
 
+  // 获取用户输入的内容
   getValue: function(e) {
     // console.log(e.detail.value)
     this.setData({
@@ -31,6 +32,7 @@ Page({
     })
   },
 
+  // 将用户所选的照片暂存在一个数组里
   chooseImage: function() {
     let that = this
     wx.chooseImage({
@@ -53,6 +55,7 @@ Page({
     })
   },
 
+  // 发布帖子功能
   submitData() {
     let that = this
     // 解决用户暴力点击重复提交问题
@@ -82,6 +85,7 @@ Page({
     
   },
 
+  // 将用户删除的照片从暂存图片数组里删去
   deleteImg: function(e) {
     // console.log(e.currentTarget.dataset.index);
     let index = e.currentTarget.dataset.index
@@ -95,7 +99,10 @@ Page({
   submitToDB: function() {
     db.collection('actions').add({
       data: {
-        nickName: app.globalData.userInfo.nickName,
+        realName: app.globalData.userInfo.realName,
+        phone: app.globalData.userInfo.userphone,
+        usersection: app.globalData.userInfo.usersection,
+        userhouse: app.globalData.userInfo.userhouse,
         faceImg: app.globalData.userInfo.avatarUrl,
         text: this.data.inputValue,
         images: this.data.cloudImgList,

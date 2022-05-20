@@ -106,6 +106,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/contact/contact",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

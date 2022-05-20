@@ -31,6 +31,46 @@ Page({
     )
   },
 
+  // 智慧门禁模块
+  guard: function() {
+    // 进入板块之前必须授权登陆，否则跳到mine的tabbar页面
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    }
+    else {
+      wx.navigateTo({
+        url: '/pages/security/security',
+      })
+    }
+  },
+
+  // 联系物业板块
+  contact: function() {
+    // 进入板块之前必须授权登陆，否则跳到mine的tabbar页面
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    }
+    else {
+      wx.navigateTo({
+        url: '/pages/contact/contact',
+      })
+    }
+  },
+
   // 问卷调查模块
   questionnaire: function() {
     // 进入板块之前必须授权登陆，否则跳到mine的tabbar页面

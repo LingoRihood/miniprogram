@@ -1,0 +1,39 @@
+<!--pages/contact/contact.wxml-->
+<view class="personnel">
+  <view class="title">保安部</view>
+  <block wx:for="{{guardList}}" wx:key="index">
+    <view class="individual">
+      <image class="img" src="{{item.guardImg}}" mode="aspectFill"></image>
+      <view class="detail">
+        <view class="name">姓名：{{item.name}}</view>
+        <view class="phone">电话：{{item.phone}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="personnel">
+  <view class="title">保洁部</view>
+  <block wx:for="{{cleanerList}}" wx:key="index">
+    <view class="individual">
+      <image class="img" src="{{item.cleanerImg}}" mode="aspectFill"></image>
+      <view class="detail">
+        <view class="name">姓名：{{item.cleanerName}}</view>
+        <view class="phone">电话：{{item.cleanerPhone}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="personnel last">
+  <view class="title">办公室部</view>
+  <block wx:for="{{officeList}}" wx:key="index">
+    <view class="individual">
+      <image class="img" src="{{item.officeImg}}" mode="aspectFill"></image>
+      <view class="detail">
+        <view class="name">姓名：{{item.name}}</view>
+        <view class="phone">电话：{{item.phone}}</view>
+      </view>
+    </view>
+  </block>
+</view>

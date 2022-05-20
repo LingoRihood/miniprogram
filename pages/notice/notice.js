@@ -1,5 +1,4 @@
 // pages/notice/notice.js
-const app = getApp()
 const db=wx.cloud.database()
 const timeform = require("../../utils/timeform")
 

@@ -17,6 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // console.log(app.globalData.userInfo);
     // console.log(app.globalData.openid);
     this.setData({
       myopenid: app.globalData.openid
@@ -56,6 +57,7 @@ Page({
   deleteAction: function (event) {
     let that = this
     // console.log(event.currentTarget.dataset.id)
+    // 获取用户删除的帖子id
     let id = event.currentTarget.dataset.id
     db.collection('actions').doc(id).remove({
       success(res) {
@@ -84,6 +86,7 @@ Page({
         }
 
         // 用户点赞数据渲染
+        // 先遍历每一条帖子
         for(let k in list) {
           for(let j in list[k].likeList) {
             // 用户点过赞
@@ -97,6 +100,7 @@ Page({
         }
 
         // 用户评论数据渲染
+        // 先遍历每一条帖子
         for(let k in list) {
           for(let j in list[k].commentList) {
             // 每条评论时间格式化
@@ -127,6 +131,7 @@ Page({
     // 已经授权过那就直接添加进点赞列表里
     else {
       // console.log(event.currentTarget.dataset.id);
+      // 获取用户点赞的帖子id
       let id = event.currentTarget.dataset.id
       db.collection('actions').doc(id).get({
         success(res) {
@@ -167,8 +172,12 @@ Page({
             // 从没点击：添加点赞用户数据
 
             let user = {}
+            user.realName = app.globalData.userInfo.realName
+            user.userphone = app.globalData.userInfo.userphone
             user.nickName = app.globalData.userInfo.nickName
             user.faceImg = app.globalData.userInfo.avatarUrl
+            user.usersection = app.globalData.userInfo.usersection
+            user.userhouse = app.globalData.userInfo.userhouse
             user.openid = app.globalData.openid
             action.likeList.push(user)
 

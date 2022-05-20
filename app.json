@@ -20,7 +20,9 @@
         "pages/volunteer/volunteer",
         "pages/myhealthcode/myhealthcode",
         "pages/mytravelcode/mytravelcode",
-        "pages/noticenewsdetail/noticenewsdetail"
+        "pages/noticenewsdetail/noticenewsdetail",
+        "pages/contact/contact",
+        "pages/security/security"
     ],
     "window": {
         "backgroundTextStyle": "dark",
