@@ -1,0 +1,29 @@
+/* pages/noticenewsdetail/noticenewsdetail.wxss */
+.container {
+  width: 92%;
+  margin: 10rpx auto;
+}
+
+.container .title {
+  margin: 20rpx auto;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 550;
+}
+
+.container .author-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50rpx;
+}
+
+.author-time .author {
+  color: #576B95;
+  margin-right: 30rpx;
+}
+
+.author-time .time {
+  color: #666;
+}

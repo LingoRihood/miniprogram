@@ -122,6 +122,7 @@ Page({
           sectionValue: this.data.sectionValue,
           // housetitle: this.data.housetitle,
           houseValue: this.data.houseValue,
+          time: Date.now()
         },
         success(res) {
           // console.log(res);

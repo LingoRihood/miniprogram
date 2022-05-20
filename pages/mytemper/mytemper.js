@@ -237,8 +237,18 @@ Page({
       id: id,
       answers: this.data.answers
     }
+    // console.log(objAnswer.answers);
     db.collection('temperInfo').doc(id).set({
-      data: objAnswer,
+      data: {
+        id : objAnswer.id,
+        realName: objAnswer.answers[0].text,
+        gender: objAnswer.answers[1].text,
+        temperature: objAnswer.answers[2].text,
+        section: objAnswer.answers[3].text,
+        house: objAnswer.answers[4].text,
+        situation: objAnswer.answers[5].text,
+        time: Date.now()
+      },
       success(res) {
         console.log(res);
       }
@@ -248,8 +258,10 @@ Page({
       icon: 'success',
       duration: 2000
     })
-
-    wx.navigateBack()
+    setTimeout(() => {
+      wx.navigateBack()
+    }, 1000);
+    
   },
 
   /**

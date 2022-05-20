@@ -1,0 +1,11 @@
+<!--pages/noticenewsdetail/noticenewsdetail.wxml-->
+<view class="container">
+  <view class="title">{{detail.title}}</view>
+  <view class="author-time">
+    <view class="author">{{detail.author}}</view>
+    <view class="time">{{detail.publishtime}}</view>
+  </view>
+  <rich-text nodes="{{detail.content}}"></rich-text>
+</view>
+
+

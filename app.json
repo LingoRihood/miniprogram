@@ -19,7 +19,8 @@
         "pages/mytemper/mytemper",
         "pages/volunteer/volunteer",
         "pages/myhealthcode/myhealthcode",
-        "pages/mytravelcode/mytravelcode"
+        "pages/mytravelcode/mytravelcode",
+        "pages/noticenewsdetail/noticenewsdetail"
     ],
     "window": {
         "backgroundTextStyle": "dark",

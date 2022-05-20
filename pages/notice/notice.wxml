@@ -1,1 +1,11 @@
 <!--pages/notice/notice.wxml-->
+<view class="container">
+  <!-- 每一项的新闻列表 -->
+  <view class="notice-item" wx:for="{{list}}" wx:key="index" bindtap="goDetail" data-id="{{item._id}}">
+    <view class="bar"></view>
+    <view class="content">
+      <view class="title">{{item.title}}</view>
+      <view class="time">{{item.publishtime}}</view>
+    </view>
+  </view>
+</view>

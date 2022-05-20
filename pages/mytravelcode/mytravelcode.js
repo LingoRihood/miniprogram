@@ -88,7 +88,8 @@ Page({
         realName: app.globalData.userInfo.realName,
         usersection: app.globalData.userInfo.usersection,
         userhouse: app.globalData.userInfo.userhouse,
-        travelcodeimg: that.data.cloudImgList[0]
+        travelcodeimg: that.data.cloudImgList[0],
+        time: Date.now()
       },
       success(res) {
         wx.navigateBack({

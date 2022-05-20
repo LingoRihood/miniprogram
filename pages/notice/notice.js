@@ -1,5 +1,7 @@
 // pages/notice/notice.js
 const app = getApp()
+const db=wx.cloud.database()
+const timeform = require("../../utils/timeform")
 
 Page({
 
@@ -14,7 +16,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.onRefresh()
+  },
 
+  onRefresh: function() {
+    db.collection('news').orderBy('publishtime', 'desc').get().then(res => {
+      // console.log('请求到的数据', res);
+      let list = res.data
+      for(let i in list) {
+        list[i].publishtime = timeform.formatTime(new Date(list[i].publishtime))
+      }
+      this.setData({
+        list: list
+      })
+    })
+  },
+
+  goDetail: function(e) {
+    // console.log(e.currentTarget.dataset.id);
+    wx.navigateTo({
+      url: '/pages/noticenewsdetail/noticenewsdetail?id=' + e.currentTarget.dataset.id,
+    })
   },
 
   /**
@@ -49,7 +71,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.onRefresh()
+    setTimeout(wx.stopPullDownRefresh, 600)
   },
 
   /**
