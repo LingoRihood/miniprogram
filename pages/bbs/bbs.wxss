@@ -30,6 +30,8 @@
 
 .msg .right {
   flex-grow: 1;
+  /* width: 300rpx; */
+  box-sizing: border-box;
 }
 
 .right .nickname {
@@ -138,6 +140,12 @@
 
 .comment-box .comment-content {
   padding-bottom: 8rpx;
+  word-break: break-all;
+  /* white-space: pre-line; */
+}
+
+.comment-content .wrap {
+  display: inline;
 }
 
 .comment-box .comment-nickname {

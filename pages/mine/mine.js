@@ -22,33 +22,6 @@ Page({
     })
   },
 
-  // // 当用户信息没有传到小程序上，则刷新页面
-  // getUserInfo: function() {
-  //   let that = this
-  //   // console.log(this.data.userInfo);
-  //   db.collection('login_users').where({
-  //     avatarUrl: that.data.userInfo.avatarUrl
-  //   }).get({
-  //     success(res) {
-  //       console.log(res)
-  //       that.setData({
-  //         userInfo: {
-  //           _id: res.data[0]._id,
-  //           _openid: res.data[0]._openid,
-  //           avatarUrl: res.data[0].avatarUrl,
-  //           isAdmin: res.data[0].isAdmin,
-  //           nickName: res.data[0].nickName,
-  //           num: res.data[0].num,
-  //           realName: res.data[0].realName,
-  //           userhouse: res.data[0].userhouse,
-  //           userphone: res.data[0].userphone,
-  //           usersection: res.data[0].usersection
-  //         }
-  //       })
-  //     }
-  //   })
-  // },
-
   // 权限登录
   permissionLogin: function() {
     wx.navigateTo({

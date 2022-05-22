@@ -22,7 +22,9 @@
         "pages/mytravelcode/mytravelcode",
         "pages/noticenewsdetail/noticenewsdetail",
         "pages/contact/contact",
-        "pages/security/security"
+        "pages/security/security",
+        "pages/modifyInfo/modifyInfo",
+        "pages/modifypwd/modifypwd"
     ],
     "window": {
         "backgroundTextStyle": "dark",

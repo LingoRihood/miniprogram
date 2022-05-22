@@ -1,0 +1,25 @@
+/* pages/modifypwd/modifypwd.wxss */
+.accountbox {
+  width: 90%;
+  margin: 50rpx auto;
+}
+
+.accountbox .boxitem {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin-bottom: 50rpx;
+  font-size: 33rpx;
+  border-bottom: 1px solid rgb(199, 196, 196);
+}
+
+.boxitem .term {
+  width: 180rpx;
+  font-size: 36rpx;
+  font-weight: 550;
+}
+
+.boxitem .content {
+  flex-grow: 1;
+}

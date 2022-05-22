@@ -74,19 +74,21 @@
 <!-- 评论板块 -->
 <view class="comment-box" wx:if="{{action.commentList.length != 0}}">
   <view class="comment-left">
+    <!-- 评论区的logo   -->
     <image src="../../icon/commenticon.png" mode="widthFix" class="comment-logo"></image>
   </view>
   <!-- 评论详情：包括评论用户头像、昵称、评论内容等 -->
   <view class="comment-right">
     <block wx:for="{{action.commentList}}" wx:key="index">
-      <view class="comment-item">
+      <view class="comment-item" bindlongtap="{{myPhone == item.userphone ? 'deleteComment':''}}" data-index="{{index}}">
         <image class="comment-face" src="{{item.faceImg}}" mode="aspectFill"></image>
         <view class="comment-content">
           <view class="nickname-time">
-            <view class="comment-nickname">{{item.nickName}}</view>
+            <view class="comment-nickname"  bindtap="onReply" data-index="{{index}}">{{item.nickName}}</view>
             <view class="comment-time">{{item.time}}</view>
           </view>
-          <view class="comment-text">回复<text class="comment-obj">程序员</text><text>：{{item.text}}</text>
+          <view class="comment-text">
+            <text wx:if="{{item.toOpenid}}">回复<text class="comment-obj">{{item.toNickName}}</text><text>：</text></text><view style="word-break: break-all;" class="wrap">{{item.text}}</view>
           </view>
         </view>
       </view>
@@ -100,7 +102,7 @@
 <!-- 发布评论板块 -->
 <view class="pub-comment">
   <view class="pub-left">
-    <input class="pub-input" placeholder="评论" bindinput="getInputValue" type="text"/>
+    <input class="pub-input" placeholder="{{placeholder}}" bindinput="getInputValue" value="{{inputValue}}" type="text"/>
   </view>
   <view class="pub-button" bindtap="publishComment">发送</view>
 </view>

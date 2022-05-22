@@ -99,7 +99,8 @@ Page({
                         userphone: userDetail.adminPhone,
                         usersection: userDetail.adminSection,
                         userhouse: userDetail.adminHouse,
-                        isAdmin: userDetail.isAdmin
+                        isAdmin: userDetail.isAdmin,
+                        id: userDetail._id
                       },
                       success(res) {
                         // console.log(res);
@@ -116,7 +117,8 @@ Page({
                         userhouse: userDetail.adminHouse,
                         userphone: userDetail.adminPhone,
                         usersection: userDetail.adminSection,
-                        isAdmin: userDetail.isAdmin
+                        isAdmin: userDetail.isAdmin,
+                        id: userDetail._id
                       },
                       success(result) {
                         // console.log(res);
@@ -136,7 +138,8 @@ Page({
                   app.globalData.userInfo.userhouse = userDetail.adminHouse
                   app.globalData.userInfo.usersection = userDetail.adminSection
                   app.globalData.userInfo.isAdmin = userDetail.isAdmin
-                  
+                  app.globalData.id = userDetail._id
+
                   // // 显示授权成功
                   // wx.showToast({
                   //   title: '授权成功',

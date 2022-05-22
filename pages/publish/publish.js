@@ -100,6 +100,7 @@ Page({
     db.collection('actions').add({
       data: {
         realName: app.globalData.userInfo.realName,
+        nickName: app.globalData.userInfo.nickName,
         phone: app.globalData.userInfo.userphone,
         usersection: app.globalData.userInfo.usersection,
         userhouse: app.globalData.userInfo.userhouse,

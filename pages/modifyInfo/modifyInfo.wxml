@@ -1,4 +1,4 @@
-<!--pages/myaccount/myaccount.wxml-->
+<!--pages/modifyInfo/modifyInfo.wxml-->
 <view style="width: 100%; height: 100rpx;"></view>
  
 <view class="accountbox">
@@ -8,7 +8,7 @@
   </view>
   <view class="boxitem">
     <view class="term">电话：</view>
-    <view class="content">{{myphone}}</view>
+    <input type="number" 	maxlength="11" class="content" value="{{myphone}}" bindinput="onModify"></input>
   </view>
   <view class="boxitem">
     <view class="term">单元：</view>
@@ -21,9 +21,7 @@
   <view class="boxitem">
     <view class="term">管理员：</view>
     <view class="content" wx:if="{{isAdmin == true}}">是</view>
-    <view class="content" wx:else="">否</view>
+    <view class="content" wx:if="{{isAdmin == false}}">否</view>
   </view>
-  <button type="primary" bindtap="onModifyInfo">修改个人信息</button>
-  <view style="height: 30rpx;"></view>
-  <button type="primary" bindtap="onModifypwd">修改密码</button>
+  <button type="primary" bindtap="onCertain">确认修改</button>
 </view>

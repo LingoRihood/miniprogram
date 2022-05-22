@@ -9,7 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 当前用户的openid
     myopenid: null,
+    // actionList里面有isLiked属性
     actionsList: []
   },
 
@@ -22,7 +24,11 @@ Page({
     this.setData({
       myopenid: app.globalData.openid
     })
+    // let that = this
     this.getActionList()
+    // setTimeout(() => {
+    //   console.log(that.data.actionsList);
+    // }, 1000);
   },
 
   // 发布模块
@@ -48,9 +54,21 @@ Page({
   // 跳转到详情页面模块实现
   toDetail: function (event) {
     // console.log(event.currentTarget.dataset.id)
-    wx.navigateTo({
-      url: '/pages/detail/detail?id=' + event.currentTarget.dataset.id,
-    })
+    // 跳转详情页面之前必须授权登录，否则跳到mine的tabbar页面
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/detail/detail?id=' + event.currentTarget.dataset.id,
+      })
+    }
   },
 
   // 删除动态模块
@@ -85,31 +103,41 @@ Page({
           list[i].time = timeform.formatTime(new Date(list[i].time))
         }
 
+        // console.log(res);
+        // console.log(!app.globalData.userInfo);
+
         // 用户点赞数据渲染
         // 先遍历每一条帖子
-        for(let k in list) {
-          for(let j in list[k].likeList) {
-            // 用户点过赞
-            if(list[k].likeList[j].openid == app.globalData.openid) {
-              list[k].isLiked = true
-            }
-            else {
-              list[k].isLiked = false
+        if(app.globalData.userInfo != undefined) {
+          // 若用户未授权登录则不遍历
+          for(let k in list) {
+            for(let j in list[k].likeList) {
+              // 用户点过赞
+              if(list[k].likeList[j].userphone == app.globalData.userInfo.userphone) {
+                list[k].isLiked = true
+              } 
             }
           }
         }
+        
+        // console.log(res);
 
         // 用户评论数据渲染
         // 先遍历每一条帖子
-        for(let k in list) {
-          for(let j in list[k].commentList) {
-            // 每条评论时间格式化
-            list[k].commentList[j].time = timeform.formatTime(new Date(list[k].commentList[j].time))
+        if(app.globalData.userInfo != undefined) {
+          // 若用户未授权登录则不遍历
+          for(let k in list) {
+            for(let j in list[k].commentList) {
+              // 每条评论时间格式化
+              list[k].commentList[j].time = timeform.formatTime(new Date(list[k].commentList[j].time))
+            }
           }
         }
+        
         that.setData({
           actionsList: list
         })
+        // console.log(that.data.actionsList);
       }
     })
   },
@@ -117,7 +145,7 @@ Page({
   // 点赞模块
   likeAction : function(event) {
     let that = this
-    // 点赞之前必须授权登陆，否则跳到mine的tabbar页面
+    // 点赞之前必须授权登录，否则跳到mine的tabbar页面
     if(app.globalData.userInfo == null) {
       wx.switchTab({
         url: '/pages/mine/mine',
@@ -136,13 +164,14 @@ Page({
       db.collection('actions').doc(id).get({
         success(res) {
           // console.log(res);
+          // console.log(that.data.actionsList);
           let action = res.data
           let flag = false
           let index = 0
           
           // 判断当前点赞用户是否曾出现在点赞列表里
           for(let k in action.likeList) {
-            if(action.likeList[k].openid == app.globalData.openid) {
+            if(action.likeList[k].userphone == app.globalData.userInfo.userphone) {
               flag = true
               index = k
               break
@@ -169,8 +198,7 @@ Page({
             })
             
           }else {
-            // 从没点击：添加点赞用户数据
-
+            // 从没点击则添加点赞用户数据
             let user = {}
             user.realName = app.globalData.userInfo.realName
             user.userphone = app.globalData.userInfo.userphone
@@ -202,6 +230,69 @@ Page({
     } 
   },
 
+  deleteComment: function(e) {
+    let that = this
+    // 删除之前必须授权登陆，否则跳到mine的tabbar页面
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    } else {
+      // console.log(e.currentTarget.dataset.indexx);
+      // console.log(e.currentTarget.dataset.index);
+      // console.log(e.currentTarget.dataset.id);
+
+      // 该动态的id
+      let id = e.currentTarget.dataset.id
+      // 当前动态下的第index条评论
+      let index = e.currentTarget.dataset.index
+      // 所有动态中第indexx条动态
+      let indexx = e.currentTarget.dataset.indexx
+
+      // 用户只能删除自己发布的评论
+      if(that.data.actionsList[indexx].commentList[index].userphone == app.globalData.userInfo.userphone) {
+        wx.showModal({
+          title: '提示',
+          content: '确定要删除此评论吗',
+          success(res) {
+            if(res.confirm) {
+              db.collection('actions').doc(id).get({
+                success(res) {
+                  // console.log(res);
+                  let action = res.data
+                  
+                  action.commentList.splice(index, 1)
+                  db.collection('actions').doc(id).update({
+                    data: {
+                      commentList: action.commentList
+                    },
+                    success(res) {
+                      // console.log(res);
+                      wx.showToast({
+                        title: '删除评论成功',
+                        icon: 'success',
+                        duration: 1000
+                      })
+                      that.getActionList()
+                    }
+                  })
+                }
+              })
+            }else if (res.cancel) {
+              
+            }
+          }
+        })
+        
+      }
+    }
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -213,14 +304,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getActionList()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    // this.getActionList()
   },
 
   /**

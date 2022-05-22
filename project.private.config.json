@@ -113,6 +113,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/detail/detail",
+          "query": "id=0ab5303b628885b0050cfd7312d807d4",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/modifyInfo/modifyInfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

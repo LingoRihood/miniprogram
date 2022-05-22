@@ -6,7 +6,7 @@
   
 <!-- 帖子模块 -->
 <block wx:for="{{actionsList}}" wx:key="index">
-  <view class="msg" bindtap="toDetail" data-id="{{item._id}}">
+  <view class="msg">
     <!-- 左边为头像部分 -->
     <view class="left">
       <image class="face-img" src="{{item.faceImg}}" mode="widthFix"></image>
@@ -14,8 +14,8 @@
     <!-- 右边为昵称、动态内容等详细部分 -->
     <view class="right">
       <view class="nickname">{{item.nickName}}</view>
-      <view class="content">{{item.text}}</view>
-      <view class="imgs-wrap">
+      <view class="content" bindtap="toDetail" data-id="{{item._id}}">{{item.text}}</view>
+      <view class="imgs-wrap" bindtap="toDetail" data-id="{{item._id}}">
         <!-- 单图布局 -->
         <block wx:if="{{item.images.length == 1}}" wx:for="{{item.images}}" wx:for-item="imgItem" wx:for-index="imgIndex" wx:key="imgIndex">
           <image src="{{imgItem}}" mode="aspectFill" class="img1"></image>
@@ -71,11 +71,9 @@
       <!-- 评论列表 -->
       <view class="comment-box" wx:if="{{item.commentList.length != 0}}">
         <block wx:for="{{item.commentList}}" wx:for-item="commentItem" wx:for-index="commentIndex" wx:key="commentIndex">
-          <view class="comment-content">
+          <view class="comment-content" catchlongtap="deleteComment" data-id="{{item._id}}" data-index="{{commentIndex}}" data-indexx="{{index}}">
             <text class="comment-nickname">{{commentItem.nickName}}</text>
-            <text>回复</text>
-            <text class="comment-nickname">coder</text>
-            <text>：{{commentItem.text}}</text>
+            <text wx:if="{{commentItem.toOpenid}}"><text>回复</text><text class="comment-nickname">{{commentItem.toNickName}}</text></text><text>：</text><view class="wrap">{{commentItem.text}}</view>
           </view>
         </block>
       </view>
