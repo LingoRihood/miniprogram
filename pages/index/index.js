@@ -31,6 +31,46 @@ Page({
     )
   },
 
+  // 物业缴费模块
+  communityPay: function() {
+    // 进入板块之前必须授权登陆，否则跳到mine的tabbar页面
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    }
+    else {
+      wx.navigateTo({
+        url: '/pages/communityCost/communityCost',
+      })
+    }
+  },
+
+  // 停车场服务模块
+  parkingCosts: function() {
+    // 进入板块之前必须授权登陆，否则跳到mine的tabbar页面
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    }
+    else {
+      wx.navigateTo({
+        url: '/pages/parkingService/parkingService',
+      })
+    }
+  },
+
   // 智慧门禁模块
   guard: function() {
     // 进入板块之前必须授权登陆，否则跳到mine的tabbar页面
@@ -47,6 +87,34 @@ Page({
     else {
       wx.navigateTo({
         url: '/pages/security/security',
+      })
+    }
+  },
+
+  // 防疫全家桶模块
+  tools: function() {
+    // 不需要用户授权登录
+    wx.navigateTo({
+      url: '/pages/protectTools/protectTools',
+    })
+  },
+
+  // 报事报修板块
+  repair: function() {
+    // 进入板块之前必须授权登陆，否则跳到mine的tabbar页面
+    if(app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '/pages/mine/mine',
+      })
+      wx.showToast({
+        title: '请进行登录授权',
+        icon: 'error',
+        duration: 2000
+      })
+    }
+    else {
+      wx.navigateTo({
+        url: '/pages/myrepair/myrepair',
       })
     }
   },

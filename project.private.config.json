@@ -127,6 +127,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/protectTools/protectTools",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

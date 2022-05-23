@@ -21,12 +21,14 @@
 <!-- 后期有时间再将icon全部图片上传至云端 -->
 <!-- 个人服务板块导航栏 -->
 <view class="nav">
+  <!-- 物业缴费功能板块 -->
   <view class="nav-banner" bindtap="communityPay">
     <view class="nav-banner-img">
       <image src="../../icon/communityPay.png" mode="widthFix"></image>
     </view>
     <view class="description">物业缴费</view>
   </view>
+  <!-- 停车场服务功能模块 -->
   <view class="nav-banner" bindtap="parkingCosts">
     <view class="nav-banner-img">
       <image src="../../icon/parkingCosts.png" mode="widthFix"></image>
@@ -40,6 +42,7 @@
     </view>
     <view class="description">智慧门禁</view>
   </view>
+  <!-- 防疫全家桶 -->
   <view class="nav-banner" bindtap="tools">
     <view class="nav-banner-img">
       <image src="../../icon/tools.png" mode="widthFix"></image>
@@ -49,6 +52,7 @@
 </view>
 
 <!-- 社区服务板块导航栏 -->
+<!-- 报事报修功能模块 -->
 <view class="nav">
   <view class="nav-banner" bindtap="repair">
     <view class="nav-banner-img">

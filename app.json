@@ -24,7 +24,11 @@
         "pages/contact/contact",
         "pages/security/security",
         "pages/modifyInfo/modifyInfo",
-        "pages/modifypwd/modifypwd"
+        "pages/modifypwd/modifypwd",
+        "pages/myrepair/myrepair",
+        "pages/protectTools/protectTools",
+        "pages/parkingService/parkingService",
+        "pages/communityCost/communityCost"
     ],
     "window": {
         "backgroundTextStyle": "dark",

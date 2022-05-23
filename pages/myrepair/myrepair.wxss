@@ -1,0 +1,42 @@
+/* pages/myrepair/myrepair.wxss */
+.container {
+  width: 94%;
+  margin: 20rpx auto;
+}
+
+.container .top {
+  /* background-color: pink; */
+  border: 2rpx solid sandybrown;
+  margin: 30rpx auto;
+  border-radius: 10rpx;
+}
+
+.top .input-text {
+  width: 100%;
+  padding: 15rpx;
+  letter-spacing: 2rpx;
+  box-sizing: border-box;
+}
+
+.container .bottom {
+  margin: 60rpx auto;
+  /* background-color: purple; */
+}
+
+.bottom .bottom-item {
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx auto;
+}
+
+.bottom-item .title {
+  font-weight: 550;
+  font-size: 35rpx;
+}
+
+.bottom-item .inputInfo {
+  padding-left: 20rpx;
+  flex-grow: 1;
+  font-size: 33rpx;
+  border-bottom: 2rpx solid sandybrown;
+}

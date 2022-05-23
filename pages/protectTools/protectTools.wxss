@@ -1,0 +1,28 @@
+/* pages/protectTools/protectTools.wxss */
+.nav {
+  display: flex;
+  width: 100%;
+  height: 150rpx;
+  margin: 50rpx auto 80rpx;
+}
+
+.nav-banner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.nav-banner .nav-banner-img {
+  flex: 3;
+  padding-left: 40rpx;
+}
+
+.nav-banner .nav-banner-img image {
+  width: 70%;
+}
+
+.nav-banner .description {
+  flex: 1;
+  text-align: center;
+  font-size: 29rpx;
+}

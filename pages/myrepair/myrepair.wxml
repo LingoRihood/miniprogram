@@ -1,0 +1,26 @@
+<!--pages/myrepair/myrepair.wxml-->
+<view class="container">
+  <view class="top">
+    <textarea placeholder="请输入您的具体报事报修内容" class="input-text" maxlength="-1" bindinput="getInputValue">
+    </textarea>
+  </view>
+  <view class="bottom">
+    <view class="bottom-item">
+      <view class="title">姓名：</view>
+      <input type="text" bindinput="info1" class="inputInfo"/>
+    </view>
+    <view class="bottom-item">
+      <view class="title">电话：</view>
+      <input type="text" bindinput="info2" class="inputInfo"/>
+    </view>
+    <view class="bottom-item">
+      <view class="title">单元：</view>
+      <input type="text" bindinput="info3" class="inputInfo" placeholder="例如在第10单元则填10"/>
+    </view>
+    <view class="bottom-item">
+      <view class="title">房号：</view>
+      <input type="text" bindinput="info4" class="inputInfo" placeholder="例如在第9层的03室则填903"/>
+    </view>
+  </view>
+  <button type="primary" bindtap="onSubmit" disabled="{{flag != true}}">提交</button>
+</view>

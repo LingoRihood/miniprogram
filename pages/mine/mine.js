@@ -15,10 +15,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(app.globalData.userInfo);
+    // console.log(app.globalData);
+
     this.setData({
       // cnt: true,
-      userInfo: app.globalData.userInfo
+      userInfo: app.globalData.userInfo,
+      isAdmin: app.globalData.userInfo.isAdmin
     })
   },
 
@@ -194,6 +196,65 @@ Page({
       url: '/pages/complainAdv/complainAdv',
       })
     }
+  },
+
+  // 消息提醒授权
+  msgNotice: function() {
+    
+    wx.requestSubscribeMessage({
+      tmplIds: ['Nfj2O2TdlFeLrRd5fL6u8Qo1TRsf2_jM2beOcE8GDwM'],
+      success(res) {
+        console.log('授权成功', res);
+      },
+      fail(res) {
+        console.log('授权失败', res);
+      }
+    })
+  },
+
+  sendNotice: function(){
+    let that = this
+    let arr = []
+    db.collection('login_users').get({
+      success(res) {
+        // console.log(res.data);
+        arr = res.data
+        arr.forEach((value, index) => {
+          // console.log(value._openid);
+          // console.log(value.realName);
+          // console.log(index);
+          that.sendAll(value._openid, value.realName)
+        })
+      }
+    })
+  },
+
+  sendAll: function(openid, realName) {
+    let tmp = new Date().toLocaleDateString()
+    tmp = tmp.split('')
+    tmp[4] = '年'
+    tmp[6] = '月'
+    tmp[9] = '日'
+    tmp[10] = ' '
+    // console.log(tmp);
+    tmp = tmp.join('')
+    console.log(tmp);
+    // console.log(typeof tmp);
+    tmp = tmp + new Date().getHours() + ':' + new Date().getMinutes()
+    // console.log(tmp);
+
+    wx.cloud.callFunction({
+      name: "sendmsg",
+      data: {
+        openid: openid,
+        name: realName,
+        time: tmp
+      }
+    }).then(res => {
+      console.log("发送单条成功", res);
+    }).catch(res => {
+      console.log("发送单条失败", res);
+    })
   },
 
   // 退出登录

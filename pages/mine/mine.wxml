@@ -102,6 +102,10 @@
 
 <button type="primary" open-type="contact" wx:if="{{userInfo != null}}" >在线客服</button>
 <view style="height: 10rpx;"></view>
+<button type="primary" bindtap="msgNotice" wx:if="{{userInfo != null}}" >消息提醒授权</button>
+<view style="height: 10rpx;"></view>
+<button type="primary" bindtap="sendNotice" wx:if="{{isAdmin == true}}" >发送消息提醒</button>
+<view wx:if="{{isAdmin == true}}" style="height: 10rpx;"></view>
 <button class="mine-logout" type="primary" wx:if="{{userInfo != null}}" bindtap="logout">退出登录</button>
 
 

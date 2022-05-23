@@ -1,0 +1,29 @@
+<!--pages/protectTools/protectTools.wxml-->
+<view class="nav">
+  <!-- 跳转防疫健康码 -->
+  <view class="nav-banner" bindtap="healthCode">
+    <view class="nav-banner-img">
+      <image src="../../icon/healthcode2.png" mode="widthFix"></image>
+    </view>
+    <view class="description">防疫健康码</view>
+  </view>
+  <!-- 跳转通信行程卡 -->
+  <view class="nav-banner" bindtap="travelCode">
+    <view class="nav-banner-img">
+      <image src="../../icon/travelcode2.png" mode="widthFix"></image>
+    </view>
+    <view class="description">通信行程卡</view>
+  </view>
+  <view class="nav-banner">
+    <view class="nav-banner-img">
+      <image mode="widthFix"></image>
+    </view>
+    <view class="description"></view>
+  </view>
+  <view class="nav-banner">
+    <view class="nav-banner-img">
+      <image mode="widthFix"></image>
+    </view>
+    <view class="description"></view>
+  </view>
+</view>
